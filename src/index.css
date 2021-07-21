@@ -1,13 +1,133 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body, html {
+
+  margin: 0%;
+  height: 100%;
+
+ font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#main-content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#header-container {
+  height: 10vh;
+  
+  min-height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+
+  border:1px solid black;
+  border-style: groove;
+  border-radius: 5px;
+
+  background-color: #242a4c;
+
+}
+
+#header-container h1 {
+  margin: 0%;
+  color: white;
+  margin-left: 5vh;
+  margin-top: 2.5vh;
+
+}
+
+#header-container img {
+
+  width: auto;
+  height: 10vh;
+  margin-left: 5vh;
+
+}
+
+#console {
+  flex-grow: 6;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  border:1px solid black;
+  border-style: groove;
+  border-radius: 5px;
+
+  background-color: rgb(228, 228, 228);
+}
+
+#sidebar {
+
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+
+  /* padding-left: 2vw;
+  padding-right: 2vw; */
+
+  height: 87vh;
+  /* background-color: burlywood; */
+  /* border:1px solid black; */
+
+
+  flex-grow: 1;
+
+  text-align: center;
+
+
+  border:1px solid black;
+  border-style: groove;
+  border-radius: 5px;
+
+}
+
+#sales-graph {
+
+  width: inherit;
+  height: 40%;
+
+  margin: 1%;
+  /* margin-right: 0%;
+  padding-right: 0%; */
+  background-color: white;
+  
+
+  text-align: center;
+  
+}
+
+#data-list {
+
+  width: inherit;
+  height: 40%;
+
+  margin: 1%;
+  background-color: white;
+
+  text-align: center;
+
+  max-width: 100%;
+
+  overflow: auto;
+
+}
+
+#data-list table {
+
+  /* justify-content: space-evenly; */
+  width: 100%;
+  overflow: auto;
+  max-width: 100%;
+
+}
+
+#data-list li {
+
+  list-style: none;
+  border:1px solid rgb(187, 187, 187);
+  border-bottom: thin;
+
 }
