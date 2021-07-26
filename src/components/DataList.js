@@ -1,33 +1,44 @@
 import React from 'react'
 import ListItem from './ListItem'
+import ProductTable from './ProductTable'
 import CustomerTable from './CustomerTable'
 
-const DataList = ({data}) => {
+const DataList = ({data, tableType, handleRowClick, customerFilter}) => {
+
+    
 
 
-    // const rowArray = []
-    // const keys = Object.keys(data)
-    // for (let key of keys){
-    //     rowArray.push(data[key])
-    // }
 
-    console.log(data)
+    const rowArray = []
+    for (let i = 0; i < Object.keys(data).length; i++){
 
-    return (
-        <div id='data-list'>
+        //maybe develop a better key system
+        data[i].id = i
+        rowArray.push(data[i])
+    }
 
-            {/* <CustomerTable data={rowArray}/> */}
-            {/* <table>
-                <tr>
-                    <th>Customer ID</th>
-                    <th>Customer Name</th>
-                    <th>Date of Sale</th>
-                    <th>Product Sold</th>
-                </tr>
-                {rowArray}
-            </table> */}
-        </div>
-    )
+
+
+    if (tableType === 'ProductTable'){
+        return (
+            <div className='data-list'>
+                <ProductTable data={rowArray}/>
+            </div>
+        )
+    } else if (tableType === 'CustomerTable'){
+        return (
+            <div className='data-list'>
+                <CustomerTable customerFilter={customerFilter} handleRowClick={handleRowClick} data={rowArray}/>
+            </div>
+        )
+    } else if (tableType === 'OrderTable'){
+
+        return (
+            <div className='data-list'>
+                {/* <CustomerTable data={rowArray}/> */}
+            </div>
+        )
+    }
 }
 
 export default DataList

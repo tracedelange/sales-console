@@ -5,7 +5,8 @@ const Header = () => {
     return (
         <div id="header-container">
 
-            <h1>Sales Console</h1>
+            <h1>S.E.L.L.</h1>
+            <h2>Superior Economic Listing Leverage</h2>
             
         </div>
     )

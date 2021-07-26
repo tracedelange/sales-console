@@ -24,37 +24,48 @@ const useStyles = makeStyles({
 
 });
 
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+
+// const rows = [
+//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+//   createData('Eclair', 262, 16.0, 24, 6.0),
+//   createData('Cupcake', 305, 3.7, 67, 4.3),
+//   createData('Gingerbread', 356, 16.0, 49, 3.9),
+// ];
 
 // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-export default function CustomerTable({data, handleRowClick, customerFilter}) {
+export default function CustomerTable({data}) {
   const classes = useStyles();
 
-  console.log(customerFilter)
+  // data.map((item) => console.log(item))
 
   return (
     <TableContainer classes={{root: classes.customeTableContainer}} component={Paper}>
       <Table stickyHeader className={classes.table} aria-label="sticky table">
         <TableHead>
           <TableRow>
-            <TableCell className={classes.cellHeader} >Customer</TableCell>
-            <TableCell className={classes.cellHeader} align="center"># of Orders</TableCell>
-            <TableCell className={classes.cellHeader} align="center">Gross Income From Customer</TableCell>
-            <TableCell className={classes.cellHeader} align="center">Average Purchase Amount</TableCell>
+            <TableCell className={classes.cellHeader} >Product</TableCell>
+            <TableCell className={classes.cellHeader} align="center"># Sold</TableCell>
+            <TableCell className={classes.cellHeader} align="center">Sale Price</TableCell>
+            <TableCell className={classes.cellHeader} align="center">Gross Income From Product</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {data.map((row) => (
-            <TableRow onClick={() => handleRowClick(row.customerName)} key={row.id}>
+            <TableRow key={row.id}>
               <TableCell className={classes.cell} component="th" scope="row">
-                {row.customerName}
+                {row.productName}
               </TableCell>
-              <TableCell className={classes.cell} align="center">{numberWithCommas(row.orders.length)}</TableCell>
-              <TableCell className={classes.cell} align="center">${numberWithCommas(row.totalSpent)}</TableCell>
-              <TableCell className={classes.cell} align="center">${numberWithCommas(Math.round(row.totalSpent / row.orders.length))}</TableCell>
+              <TableCell className={classes.cell} align="center">{numberWithCommas(row.numberSold)}</TableCell>
+              <TableCell className={classes.cell} align="center">${numberWithCommas(row.productCost)}</TableCell>
+              <TableCell className={classes.cell} align="center">${numberWithCommas((row.productCost) * (row.numberSold))}</TableCell>
 
             </TableRow>
           ))}
