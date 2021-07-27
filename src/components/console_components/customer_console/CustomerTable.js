@@ -33,8 +33,6 @@ function numberWithCommas(x) {
 export default function CustomerTable({data, handleRowClick, customerFilter}) {
   const classes = useStyles();
 
-  console.log(customerFilter)
-
   return (
     <TableContainer classes={{root: classes.customeTableContainer}} component={Paper}>
       <Table stickyHeader className={classes.table} aria-label="sticky table">

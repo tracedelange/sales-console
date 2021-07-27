@@ -5,10 +5,10 @@ const ProfileCard = ({companyInfo}) => {
 
     return (
         <div id='profile-card'>
-            <img src={profilePic} alt="Profile picture" />
+            <img src={profilePic} alt="Profile" />
             <br/>
             {companyInfo.CEO} <br/>
-            <span>CEO of {companyInfo.name}</span> <br/>
+            <span>{companyInfo.title} at {companyInfo.name}</span> <br/>
             <span>Admin Access</span>
         </div>
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import ListItem from './ListItem'
-import ProductTable from './ProductTable'
-import CustomerTable from './CustomerTable'
+import ProductTable from './product_console/ProductTable'
+import CustomerTable from './customer_console/CustomerTable'
 
 const DataList = ({data, tableType, handleRowClick, customerFilter}) => {
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import GeneralButton from '../GeneralButton'
 
 const OrderGraphingOptions = ({products, handleItemClick, filterProduct}) => {
     // console.log(products)
@@ -20,9 +21,11 @@ const OrderGraphingOptions = ({products, handleItemClick, filterProduct}) => {
         <div className='order-graphing-options'>
 
             <h2 id='order-options-header'>Filter Graph by Product:</h2>
-
+            <div className="break"></div> {/* Flexbox line break to keep header above search options */}
             <ul>
-                <li onClick={handleItemClick} name="" key="CLEAR">Clear Filter </li>
+                <li id="order-options-header-clear" onClick={handleItemClick} name="" key="CLEAR">
+                    Clear Filter
+                </li>
                 {buttonArray}
             </ul>
         </div>

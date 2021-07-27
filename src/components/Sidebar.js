@@ -2,18 +2,15 @@ import React, { useEffect, useState } from 'react'
 import ProfileCard from './ProfileCard'
 import {NavLink, Route} from 'react-router-dom'
 import Divider from '@material-ui/core/Divider';
-import ProfilePage from './ProfilePage'
+
 import {makeStyles} from '@material-ui/core/styles'
 
-// const useStyles = makeStyles({
-//     link: {
-//         fontSize:20,
-//     },
-// })
 
-const Sidebar = () => {
+const Sidebar = ({resourceChange}) => {
 
     const [companyInfo, setCompanyInfo] = useState({})
+
+    console.log(resourceChange)
 
     useEffect(() => {
 
@@ -23,20 +20,15 @@ const Sidebar = () => {
             setCompanyInfo(data)
         })
 
-    },[])
+    },[resourceChange])
 
     return (
 
         <div id="sidebar">
             <NavLink id='profile-link' to='/profile' exact>
-
                 <ProfileCard companyInfo={companyInfo}/>
-
             </NavLink>
 
-            <Route exact path='/profile'>
-                <ProfilePage />
-            </Route>
             <Divider />
 
             {/* Profile designation at top */}

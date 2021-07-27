@@ -3,8 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 
 import CardContent from '@material-ui/core/CardContent';
+import GeneralButton from '../GeneralButton'
 
 import Typography from '@material-ui/core/Typography';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -15,7 +17,7 @@ const useStyles = makeStyles({
     backgroundColor : '#EEEDE7',
   },
   content: {
-    marginTop: 50,
+    marginTop: "1vh",
   },
   bullet: {
     display: 'inline-block',
@@ -23,7 +25,7 @@ const useStyles = makeStyles({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
   },
   pos: {
     marginBottom: 12,
@@ -34,9 +36,8 @@ const useStyles = makeStyles({
   }
 });
 
-export default function CustomerConsoleDataCard({name, customerData}) {
+export default function CustomerConsoleDataCard({name, customerData, handleReturnButtonClick}) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
 
   // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
@@ -47,18 +48,22 @@ export default function CustomerConsoleDataCard({name, customerData}) {
   return (
     <Card className={classes.root}>
       <CardContent className={classes.content}>
-        <Typography variant="h4" component="h2">
+        <Typography className={classes.title} variant="h4" component="h2">
           {name}
         </Typography>
         <Typography variant="body1" component="p">
-            Orders from customer: <br /> {customerData.orders.length}
+            Orders from customer: <br /> <span>{customerData.orders.length}</span>
         </Typography>
         <Typography variant="body1" component="p">
-            Gross Income From Customer: <br/> <span className={'classes.span'}>${numberWithCommas(customerData.totalSpent)}</span>
+            Gross Income From Customer: <br/> <span>${numberWithCommas(customerData.totalSpent)}</span>
         </Typography>
         <Typography variant="body1" component="p">
-            Average Purchase Amount: <br/> <span className={'classes.span'}>${numberWithCommas(Math.floor(customerData.totalSpent / customerData.orders.length))}</span>
+            Average Purchase Amount: <br/> <span>${numberWithCommas(Math.floor(customerData.totalSpent / customerData.orders.length))}</span>
         </Typography>
+        <br />
+        <Divider />
+        <br />
+        <GeneralButton callback={handleReturnButtonClick} text={'Return to Graph'} />
       </CardContent>
     </Card>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
-import DataCard from './DataCard'
-import StatsCard from './StatsCard'
+import DataCard from '../DataCard'
+import StatsCard from '../StatsCard'
 
 const DataGraph = ({data}) => {
 
@@ -11,10 +11,7 @@ const DataGraph = ({data}) => {
     let worstSeller = {
         numberSold : Infinity
     }
-    // let mostProfitable = {
-    //     numberSold : 1,
-    //     productCost: 1
-    // }
+
 
     for (let i = 0; i < Object.keys(data).length; i++ ){
         // console.log(data[i])
@@ -30,7 +27,7 @@ const DataGraph = ({data}) => {
         // }
     }
 
-    console.log(worstSeller)
+    // console.log(worstSeller)
 
     return (
         <div className='card-div'>

@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "json-server -p 3001 --watch db.json"
+    "json-server": "json-server -p 3001 --watch db.json",
+    "launch": "osascript -e 'tell app \"Terminal\" to do script \"cd dev/code/project-mode/sales-console/ && yarn start\"' && osascript -e 'tell app \"Terminal\" to do script \"cd dev/code/project-mode/sales-console/ && yarn json-server\"' && code ."
   },
   "eslintConfig": {
     "extends": [

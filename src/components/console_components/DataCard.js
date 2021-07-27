@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-
+// import { sizing } from '@material-ui/system';
 import CardContent from '@material-ui/core/CardContent';
 
 import Typography from '@material-ui/core/Typography';
@@ -11,11 +11,12 @@ const useStyles = makeStyles({
     minWidth: 350,
     maxWidth: 400,
     minHeight: 100,
-    margin: 40,
+    margin: "8vh",
     backgroundColor : '#EEEDE7',
+    marginRight: 10,
   },
   content: {
-    marginTop: 50,
+    marginTop: 0,
   },
   bullet: {
     display: 'inline-block',
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 24,
+    fontSize: "1vw",
   },
   pos: {
     marginBottom: 12,

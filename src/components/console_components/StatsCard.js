@@ -11,11 +11,12 @@ const useStyles = makeStyles({
     minWidth: 350,
     maxWidth: 400,
     minHeight: 100,
-    margin: 40,
+    margin: "8vh",
     backgroundColor : '#EEEDE7',
+    marginRight: 10,
   },
   content: {
-    marginTop: 75,
+    marginTop: 0,
   },
   bullet: {
     display: 'inline-block',
@@ -23,14 +24,10 @@ const useStyles = makeStyles({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 24,
+    fontSize: '1vw',
   },
   pos: {
-    marginBottom: 12,
-  },
-  span: {
-    fontWeight: 600,
-    fontSize: 24,
+    marginBottom: 4,
   }
 });
 
@@ -55,17 +52,17 @@ export default function SimpleCard({data}) {
     <Card className={classes.root}>
       <CardContent className={classes.content}>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Gross Stats
+          YTD Gross Stats
         </Typography>
 
         <Typography variant="h5" component="h2">
           Total Number of Products Sold: <br/> <span className={classes.span}>{numberWithCommas(totalNumberProductsSold)}</span>
         </Typography>
-        <br />
+        {/* <br /> */}
         <Typography variant="h5" component="h2">
           Total Gross Sales: <br/> <span className={classes.span}>${numberWithCommas(grossSales)}</span>
         </Typography>
-        <br />
+        {/* <br /> */}
         <Typography variant="h5" component="h2">
           Average Sale Price: <br/> <span className={classes.span}>${numberWithCommas(Math.round(grossSales/(totalNumberProductsSold)))}</span>
         </Typography>

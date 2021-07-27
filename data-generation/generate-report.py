@@ -125,7 +125,8 @@ def generate_company():
     
     noun = (nouns[second_index]).capitalize()
 
-    start = (authors[first_author_index]).split(' ')[0] + ' ' + noun
+    # start = (authors[first_author_index]).split(' ')[0] + ' ' + noun
+    start = noun
 
     ending = random.randint(0,10)
 
@@ -152,7 +153,8 @@ def generate_company():
 
     company = {
         'name': start + ' ' + ending_string,
-        'CEO' : authors[ceo_index]
+        'CEO' : authors[ceo_index],
+        'title' : "CEO"
     }
 
     return company

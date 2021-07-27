@@ -2,7 +2,7 @@ import React from 'react'
 import CustomerConsoleDataCard from './CustomerConsoleDataCard'
 import CustomerHistoGraph from './CustomerHistoGraph'
 
-const CustomerConsoleCardContainer = ({data, customerFilter}) => {
+const CustomerConsoleCardContainer = ({data, customerFilter, handleReturnButtonClick}) => {
 
 
     let keys = Object.keys(data)
@@ -45,7 +45,7 @@ const CustomerConsoleCardContainer = ({data, customerFilter}) => {
     return (
         <div className="card-div">
             {/* <h2 id='customer-specific-graph-title'>Customer Purchases</h2> */}
-            <CustomerConsoleDataCard customerData={data[targetCustomerDataIndex]} name={customerFilter} />
+            <CustomerConsoleDataCard customerData={data[targetCustomerDataIndex]} name={customerFilter} handleReturnButtonClick={handleReturnButtonClick}/>
             <CustomerHistoGraph graphData={graphDataArray} />
         </div>
     )
