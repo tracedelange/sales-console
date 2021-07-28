@@ -68,7 +68,8 @@ And persistently changed:
 
 Inside the data-generation directory, you can find the python script used to generate db.json - The script makes use of two txt files that contain the corpus data for the fictional companies. The first is a list of 200,001 author names arrayed in a plain text file. Many of the customers are pulled directly from this list. The product names and the company name are generated using a text file containing a list of 6801 unique nouns. 
 
-Each of these corpus files were downloaded from public repositories and are not the product of my own creation. The access, utilization, mutation, and display of these file contents was the original work of myself. 
+Each of these corpus files were downloaded from public repositories and are not the product of my own creation. The access, utilization, mutation, and display of these file contents was the original work of myself. The links for the data can be found in acknowledgements.
+
 
 # Installation
 
@@ -110,6 +111,10 @@ That should do it!
 ## **Acknowledgements**
 
 The data generated in this project is entirely fictitious and not meant to represent any legitimate organization, product or individual, it is entirely for the purpose of gaining experience developing a tool and occasionally getting a laugh out of the absurd combinations that pop up.
+
+All credit to the author.txt file goes to the impressive group over at the University of Freiburg, the link to the dataset can be found [here](http://www2.informatik.uni-freiburg.de/~cziegler/BX/)
+
+All credit to the noun.txt file goes to [This kind individual](http://www.desiquintans.com/nounlist), who asserts that the data exists in the public domain, but I think they deserve a shout-out for such a useful dataset. 
 
 If you have any comments or questions about this project, you can reach me at tracedelange@me.com
 
