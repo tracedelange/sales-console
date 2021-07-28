@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-// import { sizing } from '@material-ui/system';
 import CardContent from '@material-ui/core/CardContent';
 
 import Typography from '@material-ui/core/Typography';
@@ -12,7 +11,7 @@ const useStyles = makeStyles({
     maxWidth: 400,
     minHeight: 100,
     margin: "8vh",
-    backgroundColor : '#EEEDE7',
+    backgroundColor: '#EEEDE7',
     marginRight: 10,
   },
   content: {
@@ -35,10 +34,8 @@ const useStyles = makeStyles({
   }
 });
 
-export default function SimpleCard({title, product}) {
+export default function SimpleCard({ title, product }) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
 
   // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
   function numberWithCommas(x) {
@@ -57,10 +54,10 @@ export default function SimpleCard({title, product}) {
           {product.productName}
         </Typography>
         <Typography variant="body1" component="p">
-          Number of units sold: <br/> <span className={classes.span}>{numberWithCommas(product.numberSold)}</span>
+          Number of units sold: <br /> <span className={classes.span}>{numberWithCommas(product.numberSold)}</span>
         </Typography>
         <Typography variant="body1" component="p">
-            Gross Income from product sales: <br/> <span className={classes.span}>${numberWithCommas(product.numberSold * product.productCost)}</span>
+          Gross Income from product sales: <br /> <span className={classes.span}>${numberWithCommas(product.numberSold * product.productCost)}</span>
         </Typography>
       </CardContent>
     </Card>

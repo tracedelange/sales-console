@@ -1,5 +1,4 @@
 import React from 'react'
-import GeneralButton from '../GeneralButton'
 
 const OrderGraphingOptions = ({products, handleItemClick, filterProduct}) => {
     // console.log(products)

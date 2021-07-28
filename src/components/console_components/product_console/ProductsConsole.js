@@ -13,7 +13,7 @@ const ProductsConsole = () => {
         .then(resp => resp.json())
         .then(data => {
             setProducts(data)
-            console.log('Product Data Received')
+            // console.log('Product Data Received')
         })
         .catch((error) => console.log(error.message))
 

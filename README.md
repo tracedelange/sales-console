@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Smart Sales!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome to the CASH (Capital Acquisition & Security Holdings) Sales Console.
 
-## Available Scripts
+**Thanks to the latest revolutionary software out of DeLange Development, you can finally access a treasure trove of business analytics associated with fictitious companies, customers, products, and orders that have never (and will never!) exist! Wow!**
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## *That sounds awesome! How does it work*?
+It is awesome! The CASH sales console works by combining the powerful abilities of **React, Python and JSON-Server** to generate a mock sales report containing (by default), a company with a line of 8 products and 100 loyal customers with anywhere between 1 and 20 orders placed over the last year. Once this report is generated in Python, it is exported in JSON format and passed off to JSON-server, which acts as a backend host for the mock data. Finally, JSON-server allows the front-end react page to not only access the data but present it in a way that allows for the identification of sales trends, customer loyalties and sales statistics. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# **Console Features**:
 
-### `yarn test`
+The Sales Console contains four main routes to interact with:
+- Customer Console
+- Product Console
+- Order Console
+- Profile Page
+---
+### **Customer Console**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Customer Console is where you can find information about all your loyal customers. The front-page features of a bar graph of each customer organized by the number of orders placed by the individual. Additionally, there is a table below that features information about each customer such as the number of orders placed, the amount of money spent over each order, and the average amount of money spent on an order. 
 
-### `yarn build`
+![Customer Console](./src/assets/readme-images/customer-console.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If a customer is clicked, a histograph will be displayed featuring the frequency of each product purchased by the customer:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Customer Console Detailed](./src/assets/readme-images/customer-console-details.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+With this tool you can see exactly who your most supportive patrons are as well as their favorite products. It's good to know who your friends are!
 
-### `yarn eject`
+ ---
+### **Product Console**
+The Product Console contains information about specific product sales, such as the best and worst selling products, the number of units sold, and the gross income amassed by each product. Additionally, there is a card that contains overall YTD stats on product sales containing the gross income for the year, overall average sale price and the total number of units sold. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Product Console](./src/assets/readme-images/product-console.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
+### **Order Console**
+The Order Console is where you can find information about sales trends over time. The graph displays year to date information about the total number of sales made on each day. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Order-Console](./src/assets/readme-images/order-console.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Additionally, you can filter the graph to display YTD sales for a specific product by selecting it from the menu below:
 
-## Learn More
+![Order-Console](./src/assets/readme-images/order-console-details.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We can tell from a glance that Counter Ornaments had a Peak at the beginning of the year... Holidays?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+### **Profile Page**
 
-### Code Splitting
+By clicking on the username on the sidebar, you can visit the user profile page where you can customize aspects of your account and company. Changes made to the profile page are posted to the JSON-server enabling persistent changes to be made to the company information. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For example:
+![Profile-Page](./src/assets/readme-images/profile-page.png)
 
-### Analyzing the Bundle Size
+Can easily be populated:
+![Profile-Page-Form](./src/assets/readme-images/profile-page-form-filled.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+And persistently changed:
 
-### Making a Progressive Web App
+![Profile-Page](./src/assets/readme-images/profile-page-changed.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### **Data Generation Features:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Inside the data-generation directory, you can find the python script used to generate db.json - The script makes use of two txt files that contain the corpus data for the fictional companies. The first is a list of 200,001 author names arrayed in a plain text file. Many of the customers are pulled directly from this list. The product names and the company name are generated using a text file containing a list of 6801 unique nouns. 
 
-### Deployment
+Each of these corpus files were downloaded from public repositories and are not the product of my own creation. The access, utilization, mutation, and display of these file contents was the original work of myself. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Installation
 
-### `yarn build` fails to minify
+### Dependencies:
+- Python 3.7.4 (If you intend on generating new db's)
+- JSON-server (0.16.3)
+- npm or Yarn
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Given dependencies are correctly installed and up to date, follow the instructions below to download and install the sales-console: 
+
+If you would like to experiment with the CASH Sales-Console yourself, you can download and run the project with the following commands:
+
+First, navigate to a directory in which you'd like to download the project. Then, close the repository like so:
+
+    git clone git@github.com:tracedelange/sales-console.git
+
+Navigate into the directory 
+
+    cd sales-console
+
+Install dependencies
+
+    yarn install
+    //OR
+    npm install
+
+Start the React App
+
+    yarn start
+    //OR
+    npm start
+
+In another terminal instance, start the json-server:
+
+    json-server -p 3001 --watch db.json
+
+That should do it!
+
+## **Acknowledgements**
+
+The data generated in this project is entirely fictitious and not meant to represent any legitimate organization, product or individual, it is entirely for the purpose of gaining experience developing a tool and occasionally getting a laugh out of the absurd combinations that pop up.
+
+If you have any comments or questions about this project, you can reach me at tracedelange@me.com
+
+You can also read more about this project at [my blog](https://tracedelange.github.io/)
+
+Thanks for stopping by! 
+
+***Trace***
+
+

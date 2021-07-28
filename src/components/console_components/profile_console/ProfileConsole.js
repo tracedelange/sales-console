@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ProfilePage from './ProfilePage'
 
-const ProfileConsole = ({resourceChange}) => {
-
-
-
+const ProfileConsole = ({ resourceChange }) => {
 
     return (
         <div id='profile-console'>
-            <ProfilePage resourceChange={resourceChange}/>
-        </div> 
+            <ProfilePage resourceChange={resourceChange} />
+        </div>
     )
 }
 
