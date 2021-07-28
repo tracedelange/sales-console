@@ -78,7 +78,7 @@ const ProfilePage = ({resourceChange}) => {
             <h2>{companyInfo.name}</h2>
 
             {companyInfo.bio ? (<><h3>COMPANY BIO:</h3> <h2>{companyInfo.bio}</h2></>) : null}
-            {editCompanyInfoVisible ? <EditProfileForm submitChanges={handleEditCompanySubmit} /> : <GeneralButton callback={() => { setEditCompanyInfoVisible(true) }} text={'EDIT COMPANY INFORMATION'} />}
+            {/* {editCompanyInfoVisible ? <EditProfileForm submitChanges={handleEditCompanySubmit} /> : <GeneralButton callback={() => { setEditCompanyInfoVisible(true) }} text={'EDIT COMPANY INFORMATION'} />} */}
 
         </div>
     )
