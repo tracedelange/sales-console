@@ -14,7 +14,7 @@ const CustomerConsoleCardContainer = ({data, customerFilter, handleReturnButtonC
 
     //iterate over target and count the number of times each product was ordered
     let graphData = {} 
-    targetData.orders.map((item) => {
+    targetData.orders.forEach((item) => {
         if (item.productPurchased.productName in graphData){
             let val = graphData[item.productPurchased.productName]
             graphData = {

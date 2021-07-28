@@ -44,7 +44,7 @@ export default function CustomerConsoleDataCard({name, customerData, handleRetur
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  console.log(customerData)
+  // console.log(customerData)
   return (
     <Card className={classes.root}>
       <CardContent className={classes.content}>
@@ -60,9 +60,9 @@ export default function CustomerConsoleDataCard({name, customerData, handleRetur
         <Typography variant="body1" component="p">
             Average Purchase Amount: <br/> <span>${numberWithCommas(Math.floor(customerData.totalSpent / customerData.orders.length))}</span>
         </Typography>
-        <br />
+
         <Divider />
-        <br />
+
         <GeneralButton callback={handleReturnButtonClick} text={'Return to Graph'} />
       </CardContent>
     </Card>

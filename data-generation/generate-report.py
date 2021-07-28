@@ -149,7 +149,7 @@ def generate_company():
     elif ending == 8:
         ending_string = "Laboratories"
     elif ending == 9:
-        ending_string = "Internationl"
+        ending_string = "International"
 
     company = {
         'name': start + ' ' + ending_string,

@@ -21,7 +21,10 @@ const Console = ({resourceChange}) => {
                 <Route exact path='/products'>
                     <ProductsConsole />
                 </Route>
-                <Route exact path='/customers'>
+                <Route path='/customers'>
+                    <CustomerConsole />
+                </Route>
+                <Route path='/'>
                     <CustomerConsole />
                 </Route>
             </Switch>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import RechartsOrders from './RechartsOrders'
-import DataList from '../DataList'
 import OrderGraphingOptions from './OrderGraphingOptions'
 
 const OrdersConsole = ({data}) => {

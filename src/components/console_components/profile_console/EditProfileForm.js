@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import GeneralButton from '../GeneralButton'
 
-const EditProfileForm = ({submitChanges}) => {
+const EditProfileForm = ({ submitChanges }) => {
 
     const [newCompanyInfo, setNewCompanyInfo] = useState({})
 
@@ -12,7 +12,7 @@ const EditProfileForm = ({submitChanges}) => {
 
         setNewCompanyInfo({
             ...newCompanyInfo,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -23,7 +23,7 @@ const EditProfileForm = ({submitChanges}) => {
             <TextField name='title' onChange={handleInputChange} label={"Employee Title"} />
             <TextField name='name' onChange={handleInputChange} label={"Name of Organization"} />
             <TextField name='bio' onChange={handleInputChange} label={"Organization Bio"} />
-            <GeneralButton callback={()=> {submitChanges(newCompanyInfo)}} text={'Submit Changes'} />
+            <GeneralButton callback={() => { submitChanges(newCompanyInfo) }} text={'Submit Changes'} />
         </div>
     )
 }

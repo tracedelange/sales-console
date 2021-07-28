@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart, Line, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
 const CustomerGraphContainer = ({ data, handleCustomerGraphClick }) => {
@@ -18,9 +18,6 @@ const CustomerGraphContainer = ({ data, handleCustomerGraphClick }) => {
             toBeSorted.push(entry)
     })
 
-    // const handleCustomerGraphClick = (e) => {
-    //     console.log(e.activeLabel)
-    // }
 
     const sortedData = (toBeSorted.slice().sort((a, b) => ((new Date(a['Number of Orders'])) - (new Date(b['Number of Orders'])))))
     

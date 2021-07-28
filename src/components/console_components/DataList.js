@@ -1,13 +1,8 @@
 import React from 'react'
-import ListItem from './ListItem'
 import ProductTable from './product_console/ProductTable'
 import CustomerTable from './customer_console/CustomerTable'
 
 const DataList = ({data, tableType, handleRowClick, customerFilter}) => {
-
-    
-
-
 
     const rowArray = []
     for (let i = 0; i < Object.keys(data).length; i++){
@@ -16,8 +11,6 @@ const DataList = ({data, tableType, handleRowClick, customerFilter}) => {
         data[i].id = i
         rowArray.push(data[i])
     }
-
-
 
     if (tableType === 'ProductTable'){
         return (
