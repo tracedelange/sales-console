@@ -9,6 +9,9 @@
 ## *That sounds awesome! How does it work*?
 It is awesome! The CASH sales console works by combining the powerful abilities of **React, Python and JSON-Server** to generate a mock sales report containing (by default), a company with a line of 8 products and 100 loyal customers with anywhere between 1 and 20 orders placed over the last year. Once this report is generated in Python, it is exported in JSON format and passed off to JSON-server, which acts as a backend host for the mock data. Finally, JSON-server allows the front-end react page to not only access the data but present it in a way that allows for the identification of sales trends, customer loyalties and sales statistics. 
 
+## Visit the site demo [here!](https://sales-console-demo.herokuapp.com/customers)
+**note: persistent changes are disabled on the demo to prevent abuse**
+
 # **Console Features**:
 
 The Sales Console contains four main routes to interact with:
@@ -71,7 +74,9 @@ Inside the data-generation directory, you can find the python script used to gen
 Each of these corpus files were downloaded from public repositories and are not the product of my own creation. The access, utilization, mutation, and display of these file contents was the original work of myself. The links for the data can be found in acknowledgements.
 
 
-# Installation
+# Installation for local machines
+
+You can interact with the demo of the app [here](https://sales-console-demo.herokuapp.com/customers), however if you'd like to download the project and generate new db's you can install by following the instructions below: 
 
 ### Dependencies:
 - Python 3.7.4 (If you intend on generating new db's)
