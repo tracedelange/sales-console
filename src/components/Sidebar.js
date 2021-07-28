@@ -11,7 +11,7 @@ const Sidebar = ({resourceChange}) => {
 
     useEffect(() => {
 
-        fetch('http://localhost:3001/company')
+        fetch('https://sales-console-demo-json-server.herokuapp.com/company')
         .then(resp => resp.json())
         .then(data => {
             setCompanyInfo(data)

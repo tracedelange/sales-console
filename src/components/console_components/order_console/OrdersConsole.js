@@ -13,11 +13,11 @@ const OrdersConsole = ({data}) => {
 
     useEffect(() => {
 
-        fetch('http://localhost:3001/dates')
+        fetch('https://sales-console-demo-json-server.herokuapp.com/dates')
         .then(resp => resp.json())
         .then(data => setDates(data))
 
-        fetch('http://localhost:3001/products')
+        fetch('https://sales-console-demo-json-server.herokuapp.com/products')
         .then(resp => resp.json())
         .then(data => setProducts(data))
 

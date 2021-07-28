@@ -11,7 +11,7 @@ const CustomerConsole = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:3001/orders')
+        fetch('https://sales-console-demo-json-server.herokuapp.com/orders')
         .then(resp => resp.json())
         .then(data => setCustomers(data))
 
